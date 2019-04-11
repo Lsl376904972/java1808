@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.fxmall.memeber.mapper.MemeberMapper">
+    <resultMap id="baseResultMap" type="com.qianfeng.fxmall.memeber.po.WxbMemeber">
+        <id property="memeberId" column="memeber_id" javaType="java.lang.String"/>
+        <result property="qqNum" column="qq_num" javaType="java.lang.String"/>
+        <result property="recomuser" column="recom_user" javaType="java.lang.String"/>
+        <result property="registerTime" column="register_time" javaType="java.sql.Timestamp"/>
+        <result property="payAccount" column="pay_account" javaType="java.lang.String"/>
+        <result property="visitCode" column="visit_code" javaType="java.lang.String"/>
+        <result property="userRecom" column="use_recom" javaType="java.lang.Long"/>
+        <result property="levelCode" column="level_code" javaType="java.lang.String"/>
+        <result property="updateTime" column="update_time" javaType="java.sql.Timestamp"/>
+    </resultMap>
+    <select id="checkQQNum" resultMap="baseResultMap">
+        select * from wxb_memeber where qq_num=#{qqNum};
+    </select>
+</mapper>
